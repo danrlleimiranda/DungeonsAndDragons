@@ -7,7 +7,8 @@ class PVE extends Battle {
   }
 
   override fight(): number {
-    while (this.player.lifePoints >= 0 && this.environment.some((monster) => monster.lifePoints >= 0)) {
+    while (this.player.lifePoints >= 0 
+      && this.environment.some((monster) => monster.lifePoints >= 0)) {
       this.environment.forEach((monster) => this.player.attack(monster));
       this.environment.forEach((monster) => monster.attack(this.player));
     }
